@@ -40,3 +40,81 @@ body{
     height: 35px;
 
 }
+.heading-primary{
+	color: #fff;
+    text-transform:uppercase;
+	backface-visibility: hidden; /* ¿?¿ NO entendi para que funciona*/
+}
+.heading-primary-main{
+	display:block;
+	font-size: 60px;
+	font-weight:400;
+	letter-spacing:35px;
+	/*** mover elementos con css*/
+	animation-name: moveInLeft;
+	animation-duration:1s;
+	animation-timing-function: ease-in;/* ease-out :: empieza rapido y finaliza lento -- easy-in:: inicia lento y finaliza rapido -- REVISAR MAS OPCIONES*/
+	/**animation-iteration-count: 3; /* se repite 3 veces la animacion*/
+	/**animation-delay:1s;/* se ejecuta la animacion luego de los 1 seg*/
+}
+.heading-primary-sub{
+	display:block;
+	font-size: 20px;
+	font-weight:700;
+	letter-spacing:17.4px;
+	animation: moveInRigth 1s ease-in;
+	/*animation-duration:1s;*/
+	/*animation-timing-function: ease-in;*/
+}
+/*centrar titulo
+* hay que tener cuidado, 
+*/
+.text-box{
+	position:absolute;
+	top:50%; /* 50% sobre el objeto padre*/
+	left:50%; /* 50% sobre el objeto padre*/
+	transform: translate( -50%, -50%);/* centra objetos con el 50% respecto al MISMO elemento */
+
+}
+
+/**
+* mover elementos con css
+*/
+@keyframes moveInLeft {
+	/*start*/
+	0% { 
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+	
+	
+	80%{
+		transform: translateX(10px);
+	}
+	 /*FIN*/
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+@keyframes moveInRigth {
+	/*start*/
+	0% { 
+		opacity: 0;
+		transform: translateX(0) rotate(0deg);
+	}
+
+	60%{
+		transform:  rotate(180deg);
+	}
+	80%{
+		/*transform: translateX(0px);*/
+	}
+	 /*FIN*/
+	100% {
+		/*opacity: 1;*/
+		/*transform: translateX(100px)*/
+	}
+}
+

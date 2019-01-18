@@ -119,6 +119,10 @@ body{
 		/*transform: translateX(100px)*/
 	}
 }
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
 /*BOTON HEADER*/
 /**/
 .btn:link, .btn:visited{ /*cuando da click*/
@@ -129,6 +133,9 @@ body{
 
 	border-radius: 100px;
 	transition: all .2s; /* cuando se activa .btn:hover  y .btn:active le da tiempo(ejecutar la ) para que no sea muy rapido*/
+
+	position:relative; /*s2-c10*/
+
 }
 .btn:hover{
 	transform: translateY(-3px);
@@ -141,4 +148,45 @@ body{
 .btn-white{
 	background-color: #ffffff;
 	color: #777;
+}
+.btn::after{ /*s2-c10*/
+	content: "";
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	border-radius: 100px;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	z-index: -1; /*atras del boton*/
+
+	transition: all .4s;
+}
+
+.btn-white::after{ /*s2-c10*/
+	background-color: #ffffff;
+}
+
+.btn:hover::after{/*s2-c10*/
+	/*transform: scale(1.5); !*increase the element*/
+	transform: scaleX(1.4) scaleY(1.6);
+	opacity: 0;
+}
+.btn-animated{
+	animation: moveInBooton .5s ease-out .75s; /* animation seconds animation-timing-function  animation-delay */
+	animation-fill-mode: backwards; /* al cargar la pagina no se visualiza el boton*/
+}
+@keyframes moveInBooton {
+	/*start*/
+	0% {
+		opacity: 0;
+		transform: translateY(30px) ;
+	}
+	/*FIN*/
+	100% {
+		opacity: 1;
+		transform: translateY(0x)
+	}
 }

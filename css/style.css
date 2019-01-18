@@ -44,6 +44,7 @@ body{
 	color: #fff;
     text-transform:uppercase;
 	backface-visibility: hidden; /* ¿?¿ NO entendi para que funciona*/
+	margin-bottom: 60px;
 }
 .heading-primary-main{
 	display:block;
@@ -74,6 +75,7 @@ body{
 	top:50%; /* 50% sobre el objeto padre*/
 	left:50%; /* 50% sobre el objeto padre*/
 	transform: translate( -50%, -50%);/* centra objetos con el 50% respecto al MISMO elemento */
+	text-align: center;
 
 }
 
@@ -117,4 +119,26 @@ body{
 		/*transform: translateX(100px)*/
 	}
 }
+/*BOTON HEADER*/
+/**/
+.btn:link, .btn:visited{ /*cuando da click*/
+	text-transform: uppercase;
+	padding: 15px 40px; /*toppx left-right*/
+	text-decoration: none;
+	display: inline-block;
 
+	border-radius: 100px;
+	transition: all .2s; /* cuando se activa .btn:hover  y .btn:active le da tiempo(ejecutar la ) para que no sea muy rapido*/
+}
+.btn:hover{
+	transform: translateY(-3px);
+	box-shadow: 0 10px 20px   rgba(0,0,0,.2) /* (X or 0)  (shadow) (blur)  color (r,g,b,opacity)*/;
+}
+.btn:active{
+	transform: translateY(-1px);
+	box-shadow: 0 5px 10px   rgba(0,0,0,.2) /* (X or 0)  (shadow) (blur)  color (r,g,b,opacity)*/;
+}
+.btn-white{
+	background-color: #ffffff;
+	color: #777;
+}

@@ -8,8 +8,8 @@ Dark green: #28b485
 */
 /*Like normalize, after or before don't change the behabior*/
 *, *::after, *::before{
-    margin:0;
-    padding: 0;
+	margin:0;
+	padding: 0;
 	box-sizing: inherit; /*force inherit*/
 }
 html{
@@ -19,40 +19,54 @@ html{
 	/*trasform responsive to px*/
 	/*.625 * 16 = 10px */
 	/*.625 * 20 = 12.5px */
-	font-size: 62.5%;/*antes: 10pxs3-c18*//* if I put 100% the root detected 16px by default*/
+	font-size: 62.5%;/*antes: 10px s3-c18*//* if I put 100% the root detected 16px by default*/
 
 }
 body{
-    font-family: "Lato",sans-serif;
-    /*font-size: 16px; se comenta en s3-c18*/
-    font-weight: 400;
-    line-height: 1.7;
-    color: #777777;
-    padding: 3rem;/*antes: 30px*/
+	font-family: "Lato",sans-serif;
+	/*font-size: 16px; se comenta en s3-c18*/
+	font-weight: 400;
+	line-height: 1.7;
+	color: #777777;
+	padding: 3rem;/*antes: 30px*/
 	box-sizing: border-box;
 }
 .header{
-    height: 95vh;/*view x heigth*/
-    background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.5), rgba(0, 197, 230, 0.5)),url("../img/hero.jpg");
-    background-size: cover; /* hace que la imagen se adapte a un diseño responsive */
-    background-position: top; /*la img se ajusta al responsive: top, bottom, center de acuerdo a estos valores*/
-    position: relative;
-    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);/*x y, x y, x y */ /*toma las coordenadas de la imagen en forma de poligono*/
-    /* con clip-path: polygon se puede hacer diferentes figuras, visitar bennettfeely.com/clippy*/
+	height: 95vh;/*view x heigth*/
+	background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.5), rgba(0, 197, 230, 0.5)),url("../img/hero.jpg");
+	background-size: cover; /* hace que la imagen se adapte a un diseño responsive */
+	background-position: top; /*la img se ajusta al responsive: top, bottom, center de acuerdo a estos valores*/
+	position: relative;
+	clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);/*x y, x y, x y */ /*toma las coordenadas de la imagen en forma de poligono*/
+	/* con clip-path: polygon se puede hacer diferentes figuras, visitar bennettfeely.com/clippy*/
 
+}
+/**
+ LOGO - header
+ */
+.header__logo-box{
+	position: absolute;
+	top:4rem;/*antes: 40px*/
+	left:4rem;/*antes: 40px*/
 }
 .header__logo-box{
-    position: absolute;
-    top:4rem;/*antes: 40px*/
-    left:4rem;/*antes: 40px*/
+	position: absolute;
+	top:4rem;/*antes: 40px*/
+	left:4rem;/*antes: 40px*/
 }
 .header__logo{
-    height: 3.5rem;/*antes 35px*/
-
+	height: 3.5rem;/*antes 35px*/
 }
+/**
+	***********************
+	***********************
+	TEXTO HEADER LEO MEDINA
+	***********************
+	***********************
+ */
 .heading-primary{
 	color: #fff;
-    text-transform:uppercase;
+	text-transform:uppercase;
 	backface-visibility: hidden; /* ¿?¿ NO entendi para que funciona*/
 	margin-bottom: 6rem;/*antes: 60px*/
 }
@@ -68,6 +82,32 @@ body{
 	/**animation-iteration-count: 3; /* se repite 3 veces la animacion*/
 	/**animation-delay:1s;/* se ejecuta la animacion luego de los 1 seg*/
 }
+/**
+* mover elementos con css 	:: 	LEO MEDINA
+*/
+@keyframes moveInLeft {
+	/*start*/
+	0% {
+		opacity: 0;
+		transform: translateX(-10rem);/*antes:100px*/
+	}
+	80%{
+		transform: translateX(1rem);/*10px*/
+	}
+	/*FIN*/
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+/**
+	***********************
+	***********************
+	TEXTO : BLOG
+	***********************
+	***********************
+
+ */
 .heading-primary--sub{
 	display:block;
 	font-size: 2rem;/*20px*/
@@ -77,42 +117,10 @@ body{
 	/*animation-duration:1s;*/
 	/*animation-timing-function: ease-in;*/
 }
-/*centrar titulo
-* hay que tener cuidado, 
-*/
-.header__text-box{
-	position:absolute;
-	top:50%; /* 50% sobre el objeto padre*/
-	left:50%; /* 50% sobre el objeto padre*/
-	transform: translate( -50%, -50%);/* centra objetos con el 50% respecto al MISMO elemento */
-	text-align: center;
-
-}
-
-/**
-* mover elementos con css
-*/
-@keyframes moveInLeft {
-	/*start*/
-	0% { 
-		opacity: 0;
-		transform: translateX(-10rem);/*antes:100px*/
-	}
-	
-	
-	80%{
-		transform: translateX(1rem);/*10px*/
-	}
-	 /*FIN*/
-	100% {
-		opacity: 1;
-		transform: translateX(0)
-	}
-}
 
 @keyframes moveInRigth {
 	/*start*/
-	0% { 
+	0% {
 		opacity: 0;
 		transform: translateX(0) rotate(0deg);
 	}
@@ -123,17 +131,34 @@ body{
 	80%{
 		/*transform: translateX(0px);*/
 	}
-	 /*FIN*/
+	/*FIN*/
 	100% {
 		/*opacity: 1;*/
 		/*transform: translateX(100px)*/
 	}
 }
-/* ---------------------------------------------------- */
-/* ---------------------------------------------------- */
-/* ---------------------------------------------------- */
+/**
+centrar titulo
+hay que tener cuidado, mover respecto al objeto pagre
+*/
+.header__text-box{
+	position:absolute;
+	top:50%; /* 50% sobre el objeto padre*/
+	left:50%; /* 50% sobre el objeto padre*/
+	transform: translate( -50%, -50%);/* centra objetos con el 50% respecto al MISMO elemento */
+	text-align: center;
 
-/*BOTON HEADER*/
+}
+
+
+/*
+	*************************
+	*************************
+	BOTON HEADER
+	*************************
+	*************************
+
+*/
 /**/
 .btn:link, .btn:visited{ /*cuando da click*/
 	text-transform: uppercase;

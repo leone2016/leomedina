@@ -1,0 +1,65 @@
+/*
+	*************************
+	*************************
+	BOTON HEADER
+	*************************
+	*************************
+
+*/
+
+.btn{
+  &:link, &:visited{ /*cuando da click*/
+    text-transform: uppercase;
+    padding: 1.5rem 4rem; /*toppx left-right*/
+    text-decoration: none;
+    display: inline-block;
+
+    border-radius: 10rem;
+    transition: all .2s; /* cuando se activa .btn:hover  y .btn:active le da tiempo(ejecutar la ) para que no sea muy rapido*/
+
+    position:relative; /*s2-c10*/
+
+    font-size: 1.6rem;/*s3-18*/
+
+  }
+  &:hover{
+    transform: translateY(-.3rem);/*3px*/
+    box-shadow: 0 1rem 2rem   rgba($color-black,.2) /* (X or 0)  (shadow) (blur)  color (r,g,b,opacity)*/;
+    &::after{/*s2-c10*/
+      /*transform: scale(1.5); !*increase the element*/
+      transform: scaleX(1.4) scaleY(1.6);
+      opacity: 0;
+    }
+  }
+  &:active{
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem   rgba(0,0,0,.2) /* (X or 0)  (shadow) (blur)  color (r,g,b,opacity)*/;
+  }
+  &--white{
+    background-color: $color-white;
+    color: $color-gray-dark;
+    &::after{ /*s2-c10*/
+      background-color: $color-white;
+    }
+  }
+  &::after{ /*s2-c10*/
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 10rem;/*100px*/
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1; /*atras del boton*/
+
+    transition: all .4s;
+  }
+
+  &--animated{
+    animation: moveInBooton .5s ease-out .75s; /* animation seconds animation-timing-function  animation-delay */
+    animation-fill-mode: backwards; /* al cargar la pagina no se visualiza el boton*/
+  }
+}

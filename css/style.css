@@ -11,6 +11,9 @@ Dark green: #28b485
   GRID
  */
 /**
+    font size
+ */
+/**
 * mover elementos con css 	:: 	LEO MEDINA
 */
 @keyframes moveInLeft {
@@ -123,6 +126,45 @@ body {
     /*animation-duration:1s;*/
     /*animation-timing-function: ease-in;*/ }
 
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #FB00C6, #00C5E6);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
 /*
 	*************************
 	*************************
@@ -188,9 +230,30 @@ body {
   animation-fill-mode: backwards;
   /* al cargar la pagina no se visualiza el boton*/ }
 
+.btn-text:link, .btn-text:visited {
+  /*cuando da click*/
+  font-size: 1.6rem;
+  color: #55c57a;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  padding: 8px;
+  transition: all .2s;
+  border-radius: 2.5rem; }
+
+.btn-text:hover {
+  background-color: #55c57a;
+  color: #FFFFFF;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #55c57a; }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
 .row {
-  max-width: 114rem;
-  background-color: #eee;
+  max-width: 150rem;
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
@@ -199,7 +262,6 @@ body {
     display: table;
     clear: both; }
   .row [class^="col-"] {
-    background-color: orangered;
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 3rem; }
@@ -257,3 +319,8 @@ body {
     transform: translate(-50%, -50%);
     /* centra objetos con el 50% respecto al MISMO elemento */
     text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -20vh; }

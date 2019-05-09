@@ -19,7 +19,7 @@
 
     position:relative; /*s2-c10*/
 
-    font-size: 1.6rem;/*s3-18*/
+    font-size: $default-font-size;/*s3-18*/
 
   }
   &:hover{
@@ -63,3 +63,27 @@
     animation-fill-mode: backwards; /* al cargar la pagina no se visualiza el boton*/
   }
 }
+.btn-text{
+  &:link, &:visited{ /*cuando da click*/
+    font-size: $default-font-size;
+    color: $color-primary;
+    text-decoration: none;
+    //border-bottom: 1px solid $color-primary;
+    border-style: solid;
+    border-width: 1px;
+    padding: 8px;
+    transition: all .2s;
+    border-radius: 2.5rem;
+  }
+  &:hover{
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: translateY(-2px);
+    border-color: $color-primary;
+  }
+  &:active{
+    box-shadow: 0 0.5rem 2rem rgba($color-black, .15);
+    transform: translateY(0);
+   }
+ }

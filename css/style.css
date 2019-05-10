@@ -233,7 +233,7 @@ body {
 .btn-text:link, .btn-text:visited {
   /*cuando da click*/
   font-size: 1.6rem;
-  color: #55c57a;
+  color: #c59809;
   text-decoration: none;
   border-style: solid;
   border-width: 1px;
@@ -242,11 +242,11 @@ body {
   border-radius: 2.5rem; }
 
 .btn-text:hover {
-  background-color: #55c57a;
+  background-color: #c59809;
   color: #FFFFFF;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(-2px);
-  border-color: #55c57a; }
+  border-color: #c59809; }
 
 .btn-text:active {
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
@@ -258,7 +258,10 @@ body {
     width: 50%;
     box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
     border-radius: 2px;
-    position: absolute; }
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
     .composition_photo-p1 {
       left: 0;
       top: -2rem; }
@@ -268,6 +271,64 @@ body {
     .composition_photo-p3 {
       left: 20%;
       top: 10rem; }
+    .composition_photo:hover {
+      outline: 1.5rem solid #c59809;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition_photo:not(:hover) {
+    transform: scale(0.9); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  transition: all .2s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    background-image: linear-gradient(to right, #FB00C6, #00C5E6);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 50rem; }
+  .card__side {
+    color: #FFFFFF;
+    font-size: 2rem;
+    height: 50rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+    .card__side--front {
+      background-color: #FFFFFF; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #FB00C6, #00C5E6); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture--1 {
+    background-image: url("../img/nat-5.img"); }
 
 .row {
   max-width: 150rem;
@@ -281,19 +342,19 @@ body {
   .row [class^="col-"] {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
-      margin-right: 3rem; }
+      margin-right: 6rem; }
   .row .col-1-of-2 {
-    width: calc((100% - 3rem) / 2); }
+    width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
-    width: calc((100% - 2 *  3rem) / 3); }
+    width: calc((100% - 2 *  6rem) / 3); }
   .row .col-1-of-4 {
-    width: calc((100% - 3 *  3rem) / 4); }
+    width: calc((100% - 3 *  6rem) / 4); }
   .row .col-2-of-3 {
-    width: calc( 2 * ((100% - 2 *  3rem) / 3)+ 3rem); }
+    width: calc( 2 * ((100% - 2 *  6rem) / 3)+ 6rem); }
   .row .col-2-of-4 {
-    width: calc( 2 * ((100% - 3 *  3rem) / 4)+ 3rem); }
+    width: calc( 2 * ((100% - 3 *  6rem) / 4)+ 6rem); }
   .row .col-3-of-4 {
-    width: calc( 3 * ((100% - 3 *  3rem) / 4)+ 2 * 3rem); }
+    width: calc( 3 * ((100% - 3 *  6rem) / 4)+ 2 * 6rem); }
 
 .header {
   height: 95vh;
@@ -340,4 +401,18 @@ body {
 .section-about {
   background-color: #f7f7f7;
   padding: 25rem 0;
-  margin-top: -20vh; }
+  margin-top: -25vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.8), rgba(0, 197, 230, 0.8)), url("../../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -11rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
+
+.section_tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 50rem 0;
+  margin-top: -10vh; }

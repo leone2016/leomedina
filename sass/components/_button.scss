@@ -42,6 +42,13 @@
       background-color: $color-white;
     }
   }
+  &--primary{
+    background-color: $color-primary;
+    color: $color-white;
+    &::after{ /*s2-c10*/
+      background-color: $color-primary;
+    }
+  }
   &::after{ /*s2-c10*/
     content: "";
     display: inline-block;

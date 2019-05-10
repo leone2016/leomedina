@@ -17,6 +17,11 @@
 }
 .section_tours{
   background-color: $color-gray-light-1;
-  padding: 25rem 0 50rem 0;
+  padding: 25rem 0 15rem 0;
   margin-top: -10vh;
+}
+.section-stories{
+  padding: 15rem 0; //15 (top bottom) 0 (right and left)
+  background-color: $color-gray-light-1;
+
 }

@@ -1,0 +1,533 @@
+@charset "UTF-8";
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
+/**
+  GRID
+ */
+/**
+    font size
+ */
+/**
+* mover elementos con css 	:: 	LEO MEDINA
+*/
+@keyframes moveInLeft {
+  /*start*/
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+    /*antes:100px*/ }
+  80% {
+    transform: translateX(1rem);
+    /*10px*/ }
+  /*FIN*/
+  100% {
+    opacity: 1;
+    transform: translateX(0); } }
+
+@keyframes moveInRigth {
+  /*start*/
+  0% {
+    opacity: 0;
+    transform: translateX(0) rotate(0deg); }
+  60% {
+    transform: rotate(180deg); }
+  80% {
+    /*transform: translateX(0px);*/ }
+  /*FIN*/
+  100% {
+    /*opacity: 1;*/
+    /*transform: translateX(100px)*/ } }
+
+@keyframes moveInBooton {
+  /*start*/
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+    /*30px*/ }
+  /*FIN*/
+  100% {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/*Like normalize, after or before don't change the behabior*/
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*force inherit*/ }
+
+/* this defines what 1rem is*/
+html {
+  /*1rem  = 10px */
+  /*transform to responsive*/
+  /*10px/16 = 62.5 * 100 = 62.5 */
+  /*trasform responsive to px*/
+  /*.625 * 16 = 10px */
+  /*.625 * 20 = 12.5px */
+  font-size: 62.5%;
+  /*antes: 10px s3-c18*/
+  /* if I put 100% the root detected 16px by default*/ }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato",sans-serif;
+  /*font-size: 16px; se comenta en s3-c18*/
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem;
+  /*antes: 30px*/
+  /* box-sizing: border-box; esto no es tipografia*/ }
+
+/**
+	***********************
+	***********************
+	TEXTO HEADER LEO MEDINA
+	***********************
+	***********************
+ */
+.heading-primary {
+  color: #FFFFFF;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* ¿?¿ NO entendi para que funciona*/
+  margin-bottom: 6rem;
+  /*antes: 60px*/ }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    /*antes:60px*/
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    /*antes: 35px*/
+    /*** mover elementos con css*/
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    /* ease-out :: empieza rapido y finaliza lento -- easy-in:: inicia lento y finaliza rapido -- REVISAR MAS OPCIONES*/
+    /**animation-iteration-count: 3; /* se repite 3 veces la animacion*/
+    /**animation-delay:1s;/* se ejecuta la animacion luego de los 1 seg*/ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    /*20px*/
+    font-weight: 700;
+    letter-spacing: 1.7rem;
+    /*17.4px*/
+    animation: moveInRigth 1s ease-in;
+    /*animation-duration:1s;*/
+    /*animation-timing-function: ease-in;*/ }
+
+.heading-secondary {
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #FB00C6, #00C5E6);
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: .2rem;
+  transition: all .2s; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg) scale(1.1);
+    text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.paragraph {
+  font-size: 1.6rem; }
+  .paragraph:not(:last-child) {
+    margin-bottom: 3rem; }
+
+.u-center-text {
+  text-align: center; }
+
+.u-margin-bottom-8 {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem; }
+
+.u-margin-bottom-medium {
+  margin-bottom: 4rem; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.u-margin-bottom-huge {
+  margin-bottom: 10rem; }
+
+/*
+	*************************
+	*************************
+	BOTON HEADER
+	*************************
+	*************************
+
+*/
+.btn:link, .btn:visited {
+  /*cuando da click*/
+  text-transform: uppercase;
+  padding: 1.5rem 4rem;
+  /*toppx left-right*/
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10rem;
+  transition: all .2s;
+  /* cuando se activa .btn:hover  y .btn:active le da tiempo(ejecutar la ) para que no sea muy rapido*/
+  position: relative;
+  /*s2-c10*/
+  font-size: 1.6rem;
+  /*s3-18*/ }
+
+.btn:hover {
+  transform: translateY(-0.3rem);
+  /*3px*/
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+  .btn:hover::after {
+    /*s2-c10*/
+    /*transform: scale(1.5); !*increase the element*/
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0; }
+
+.btn:active {
+  transform: translateY(-0.1rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn--white {
+  background-color: #FFFFFF;
+  color: #777; }
+  .btn--white::after {
+    /*s2-c10*/
+    background-color: #FFFFFF; }
+
+.btn--primary {
+  background-color: #c59809;
+  color: #FFFFFF; }
+  .btn--primary::after {
+    /*s2-c10*/
+    background-color: #c59809; }
+
+.btn::after {
+  /*s2-c10*/
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 10rem;
+  /*100px*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /*atras del boton*/
+  transition: all .4s; }
+
+.btn--animated {
+  animation: moveInBooton .5s ease-out .75s;
+  /* animation seconds animation-timing-function  animation-delay */
+  animation-fill-mode: backwards;
+  /* al cargar la pagina no se visualiza el boton*/ }
+
+.btn-text:link, .btn-text:visited {
+  /*cuando da click*/
+  font-size: 1.6rem;
+  color: #c59809;
+  text-decoration: none;
+  border-style: solid;
+  border-width: 1px;
+  padding: 8px;
+  transition: all .2s;
+  border-radius: 2.5rem; }
+
+.btn-text:hover {
+  background-color: #c59809;
+  color: #FFFFFF;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #c59809; }
+
+.btn-text:active {
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
+  transform: translateY(0); }
+
+.composition {
+  position: relative; }
+  .composition_photo {
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10;
+    transition: all .2s;
+    outline-offset: 2rem; }
+    .composition_photo-p1 {
+      left: 0;
+      top: -2rem; }
+    .composition_photo-p2 {
+      right: 6rem;
+      top: 2rem; }
+    .composition_photo-p3 {
+      left: 20%;
+      top: 10rem; }
+    .composition_photo:hover {
+      outline: 1.5rem solid #c59809;
+      transform: scale(1.05) translateY(-0.5rem);
+      box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
+      z-index: 20; }
+  .composition:hover .composition_photo:not(:hover) {
+    transform: scale(0.9); }
+
+.feature-box {
+  background-color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.5);
+  transition: all .2s; }
+  .feature-box__icon {
+    font-size: 6rem;
+    margin-bottom: .5rem;
+    background-image: linear-gradient(to right, #FB00C6, #00C5E6);
+    -webkit-background-clip: text;
+    color: transparent; }
+  .feature-box:hover {
+    transform: translateY(-1.5rem) scale(1.03); }
+
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 52rem; }
+  .card__side {
+    height: 52rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.2); }
+    .card__side--front {
+      background-color: #FFFFFF; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+      .card__side--back-2 {
+        background-image: linear-gradient(to right bottom, #FB00C6, #00C5E6); }
+      .card__side--back-3 {
+        background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: color;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url("../img/nat-5.jpg"); }
+    .card__picture--2 {
+      background-image: linear-gradient(to right bottom, #FB00C6, #00C5E6), url("../img/nat-8.jpg"); }
+    .card__picture--3 {
+      background-image: linear-gradient(to right bottom, #2998ff, #5643fa), url("../img/nat-9.jpg"); }
+  .card__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: #FFFFFF;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%; }
+  .card__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+    .card__heading-span--2 {
+      background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.85), rgba(0, 197, 230, 0.85)); }
+    .card__heading-span--3 {
+      background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
+  .card__details {
+    padding: 3rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center; }
+  .card__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: #FFFFFF; }
+  .card__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 6rem;
+    font-weight: 100; }
+
+.story {
+  width: 75%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
+  background-color: #FFFFFF;
+  padding: 6rem;
+  padding-left: 9rem;
+  font-size: 1.6rem;
+  transform: skewX(-12deg); }
+  .story > * {
+    transform: skewX(12deg); }
+  .story__shape {
+    width: 15rem;
+    height: 15rem;
+    background-color: orangered;
+    float: left;
+    shape-outside: circle(50% at 50% 50%);
+    -webkit-shape-outside: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    transform: translateX(-3rem) skewX(12deg);
+    position: relative; }
+  .story__img {
+    height: 100%;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden; }
+  .story__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    text-align: center;
+    opacity: 0;
+    transition: all .5s;
+    backface-visibility: hidden; }
+  .story:hover .story__caption {
+    opacity: 1;
+    transform: translate(-50%, -50%); }
+  .story:hover .story__img {
+    transform: translateX(-4rem) scale(1);
+    filter: blur(3px) brightness(80%); }
+
+.row {
+  max-width: 150rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem) / 2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 *  6rem) / 3); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 *  6rem) / 4); }
+  .row .col-2-of-3 {
+    width: calc( 2 * ((100% - 2 *  6rem) / 3)+ 6rem); }
+  .row .col-2-of-4 {
+    width: calc( 2 * ((100% - 3 *  6rem) / 4)+ 6rem); }
+  .row .col-3-of-4 {
+    width: calc( 3 * ((100% - 3 *  6rem) / 4)+ 2 * 6rem); }
+
+.header {
+  height: 95vh;
+  /*view x heigth*/
+  background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.8), rgba(0, 197, 230, 0.8)), url("../img/hero.jpg");
+  background-size: cover;
+  /* hace que la imagen se adapte a un diseño responsive */
+  background-position: top;
+  /*la img se ajusta al responsive: top, bottom, center de acuerdo a estos valores*/
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%);
+  /*x y, x y, x y */
+  /*toma las coordenadas de la imagen en forma de poligono*/
+  /* con clip-path: polygon se puede hacer diferentes figuras, visitar bennettfeely.com/clippy*/
+  /**
+  centrar titulo
+  hay que tener cuidado, mover respecto al objeto pagre
+  */ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    /*antes: 40px*/
+    left: 4rem;
+    /*antes: 40px*/ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    /*antes: 40px*/
+    left: 4rem;
+    /*antes: 40px*/ }
+  .header__logo {
+    height: 3.5rem;
+    /*antes 35px*/ }
+  .header__text-box {
+    position: absolute;
+    top: 50%;
+    /* 50% sobre el objeto padre*/
+    left: 50%;
+    /* 50% sobre el objeto padre*/
+    transform: translate(-50%, -50%);
+    /* centra objetos con el 50% respecto al MISMO elemento */
+    text-align: center; }
+
+.section-about {
+  background-color: #f7f7f7;
+  padding: 25rem 0;
+  margin-top: -25vh; }
+
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(to right bottom, rgba(251, 0, 198, 0.8), rgba(0, 197, 230, 0.8)), url("../../img/nat-4.jpg");
+  background-size: cover;
+  transform: skewY(-7deg);
+  margin-top: -11rem; }
+  .section-features > * {
+    transform: skewY(7deg); }
+
+.section_tours {
+  background-color: #f7f7f7;
+  padding: 25rem 0 15rem 0;
+  margin-top: -10vh; }
+
+.section-stories {
+  padding: 15rem 0;
+  background-color: #f7f7f7; }

@@ -1,0 +1,37 @@
+.composition{
+  position: relative;
+  &_photo{
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .4);
+    border-radius: 2px;
+    position: absolute;
+    z-index: 10; //pone una posicion inferior para todas las imagenes
+    transition: all .2s; //
+    outline-offset: 2rem; //espacio entre la imagen y el marco
+
+    &-p1{
+      left: 0;
+      top: -2rem;
+    }
+    &-p2{
+      right: 6rem;
+      top: 2rem;
+    }
+    &-p3{
+      left: 20%;
+      top: 10rem;
+    }
+    &:hover{ //marco sobre imagen
+      outline: 1.5rem solid $color-primary; //dibuja un marco sobre la imagen
+      transform: scale(1.05) translateY(-.5rem); //
+      box-shadow: 0 2.5rem 4rem rgba($color-black, .5);
+      z-index: 20;
+    }
+
+  }
+  //cuando se encuetre sobre .composition y no se encuentra sobre _photo
+  //reduce el tamaño del resto de imagenes (para tres imagenes solo aplica a 2 )
+  &:hover &_photo:not(:hover){
+    transform: scale(.9);
+  }
+}

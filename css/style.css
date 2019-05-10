@@ -252,6 +252,23 @@ body {
   box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.15);
   transform: translateY(0); }
 
+.composition {
+  position: relative; }
+  .composition_photo {
+    width: 50%;
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    position: absolute; }
+    .composition_photo-p1 {
+      left: 0;
+      top: -2rem; }
+    .composition_photo-p2 {
+      right: 6rem;
+      top: 2rem; }
+    .composition_photo-p3 {
+      left: 20%;
+      top: 10rem; }
+
 .row {
   max-width: 150rem;
   margin: 0 auto; }

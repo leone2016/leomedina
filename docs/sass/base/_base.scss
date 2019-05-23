@@ -13,8 +13,14 @@ html{
   /*.625 * 16 = 10px */
   /*.625 * 20 = 12.5px */
   font-size: 62.5%;/*antes: 10px s3-c18*//* if I put 100% the root detected 16px by default*/
+  @include respond(tab-land){ font-size: 56.25%; }//1rem = 9px, 9/16 = 56,25% === WIDTH < 1200
+  //@include respond(phone){ font-size: 30%; }//1rem = 4.8 (.3*16 = 4.8)
+  @include respond(tab-port){ font-size: 50%; }//1rem = 8px, 8/16 = 50% === WIDTH < 900
+  @include respond(big-desktop){ font-size: 75%; }//1rem = 12px, 12/16 = 75%
 
 }
 body{
   box-sizing: border-box;
+  padding: 3rem;
+  @include respond(tab-port){ padding: 0; }//1rem = 8px, 8/16 = 50% === WIDTH < 900
 }

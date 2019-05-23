@@ -1,3 +1,6 @@
+*instalar compilador de sass
+>
+
 * compilar sass 
 >npm run compile:sass
 

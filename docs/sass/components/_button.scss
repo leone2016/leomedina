@@ -8,7 +8,7 @@
 */
 
 .btn{
-  &:link, &:visited{ /*cuando da click*/
+  &,&:link, &:visited{ /*cuando da click*/
     text-transform: uppercase;
     padding: 1.5rem 4rem; /*toppx left-right*/
     text-decoration: none;
@@ -20,6 +20,10 @@
     position:relative; /*s2-c10*/
 
     font-size: $default-font-size;/*s3-18*/
+    //cambios para el boton no tiene la propiedad :link ni :visited
+    // por eso solo se agrega &,
+    border: none;
+    coursor: pointer;
 
   }
   &:hover{
@@ -31,7 +35,7 @@
       opacity: 0;
     }
   }
-  &:active{
+  &:active,  &:focus{
     transform: translateY(-.1rem);
     box-shadow: 0 .5rem 1rem   rgba(0,0,0,.2) /* (X or 0)  (shadow) (blur)  color (r,g,b,opacity)*/;
   }

@@ -1,3 +1,6 @@
+*instalar compilador de sass
+>
+
 * compilar sass 
 >npm run compile:sass
 
@@ -20,3 +23,17 @@
 * Iconos gratis
 
 >http://linea.io
+
+> como usar position absolute y relative
+
+lo explicaré con un ejemplo:
+
+imaginemos que tenemos una sección de comentarios (listas) y queremos poner una imagen de fondo que contenga a todos esos comentarios,
+
+En este caso la imagen de fondo (Padre)
+    * Tendria la position: absolute
+    
+Eara los sección de comentarios
+    * Tendria la opcion de position:relative;
+    
+con esto puedo tener una imagen de fondo, por así decirlo

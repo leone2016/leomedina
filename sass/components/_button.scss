@@ -74,6 +74,9 @@
     animation-fill-mode: backwards; /* al cargar la pagina no se visualiza el boton*/
   }
 }
+
+
+
 .btn-text{
   &:link, &:visited{ /*cuando da click*/
     font-size: $default-font-size;

@@ -13,7 +13,7 @@
     transition: all .5s ;
     &:focus{
       outline: none;
-      box-shadow: 0 1rem 2rem rgba($color-black, .1);
+      box-shadow: 0 .1rem 2rem rgba($color-black, .1);
       border-bottom: 3px solid $color-success;
     }
     &:focus:invalid{
@@ -60,7 +60,7 @@
   &__radio-button{ //dibuja un radio bottom
     height: 3rem;
     width: 3rem;
-    border: 5px solid $color-primary;
+      border: 5px solid $color-primary;
     border-radius: 50%;
     display: inline-block;
     position: absolute; //para sobremontar objetos

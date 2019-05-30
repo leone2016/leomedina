@@ -93,6 +93,9 @@
 
   //funcionalidad
   //utiliza el check box para crear el menu que se expanda
+  //para hacer visible el fondo del menu
+  //para hacer visible el fondo del menu
+  //para hacer visible el fondo del menu
   &__checkbox:checked ~ &__background{
     transform: scale(100);
   }

@@ -1,0 +1,154 @@
+.navigation{
+    &__checkbox{
+      display: none;
+    }
+    &__button{ //circulo
+      background-color: $color-white;
+      height: 7rem;
+      width: 7rem;
+      position: fixed;
+      top: 6rem;
+      right: 6rem;
+      border-radius: 50%;
+      z-index: 2000;
+      box-shadow: 0 1rem 3rem rgba($color-black, .1);
+      text-align: center; //centrar barras dentro de circulo
+      cursor:pointer;
+      @include respond(tab-port){
+        top: 2rem;
+        right: 3rem;
+      }
+    }
+
+    &__background{
+      height: 6rem;
+      width: 6rem;
+      border-radius: 50%;
+      position: fixed;//similar a absolute
+      top: 6.5rem;
+      right: 6.5rem;
+      background-image: radial-gradient($color-primary-light,$color-primary-dark);
+      z-index: 1000;
+
+      //transform: scale(100); //para hacer visible el fondo del menu
+      transition: transform .8s cubic-bezier(0.86, 0, 0.07, 1) ; //movimiento de los objetos https://easings.net s5 -c50
+      @include respond(tab-port){
+        top: 2.5rem;
+        right: 3.1rem;
+      }
+    }
+    &__nav{ //contenido del menu (texto)
+      height: 100vh;
+      //width: 100%;
+      position: fixed;
+      top:0;
+      //right: 0; // el texto aparece y desaparece desde la derecha
+      left: 0; // el texto aparece y desaparece desde la disquerda
+      z-index: 1500;
+
+      opacity: 0; //invisile texto del menu, pero aun aparece la mano de seleccion
+      width: 0; //con esto se pone los link en una posicion que no es seleccionable y se comenta width: 100%;
+      transition: all .8s cubic-bezier(0.68, -0.55, 0.265, 1.55); //movimientos de los objetos https://easings.net s5 - c50
+
+
+    }
+    &__list{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      list-style: none;
+      text-align: center;
+      width: 100%;
+    }
+    &__item{
+      margin: 1rem;
+    }
+    &__link{
+      &:link, &:visited{
+        display: inline-block;
+        font-size: 3rem;
+        font-weight: 300;
+        padding: 1rem 2rem;
+        color:$color-white;
+        text-decoration: none;
+        text-transform: uppercase;
+        //background-image: linear-gradient(120deg, orangered 0, orangered 50%, $color-white 50% ); //pruebas
+        background-image: linear-gradient(120deg, transparent, transparent 50%, $color-white 50% );
+        background-size: 220%;
+        transition: all .4s;
+        span{
+          margin-right: 1.5rem;
+          display: inline-block;
+        }
+      }
+      &:hover,
+      &:active{
+        background-position: 100%;
+        color:$color-primary;
+        transform: translateX(1rem);
+      }
+
+    }
+
+  //funcionalidad
+  //utiliza el check box para crear el menu que se expanda
+  &__checkbox:checked ~ &__background{
+    transform: scale(100);
+  }
+  &__checkbox:checked ~ &__nav{
+    opacity: 1;
+    width: 100%;
+  }
+
+  //icon
+  &__icon{
+    //elemento padre
+    position: relative;
+    margin-top: 3.5rem;
+
+    // da el color y dimencion de las tres lineas, AUN NO SE GRAFICAN
+    &, &::before, &::after {
+      width: 3rem;
+      height: 2px;
+      background-color: $color-gray-dark3;
+      display: inline-block;
+    }
+    //grafica la linea central
+    &::before, &::after {
+       content: "";
+      //elemento hijo
+      position: absolute;
+      left: 0;
+      transition: all .2s;
+    }
+    //grafica la linea superior
+    &::before{ top: -.8rem; }
+    //grafica la linea inferior
+    &::after{ top: .8rem}
+  }
+  // da un lijero movimiento a las lineas====
+  &__button:hover &__icon::before{ //icono es el hijo de Button
+    top: -1rem;
+  }
+  &__button:hover &__icon::after{ //icono es el hijo de Button
+    top: 1rem;
+
+  }
+  //==========================================
+  //transformar las tres lineas en x
+  &__checkbox:checked + &__button &__icon { //cuando seleccione checked, va seleccionar(hermano button) el boton(padre) con el icono(hijo)
+    background-color: transparent;
+
+  }
+  &__checkbox:checked + &__button &__icon::before { //cuando seleccione checked, va seleccionar(hermano button) el boton(padre) con el icono(hijo)
+    top:0;
+    transform: rotate(135deg);
+  }
+  &__checkbox:checked + &__button &__icon::after { //cuando seleccione checked, va seleccionar(hermano button) el boton(padre) con el icono(hijo)
+    top:0;
+    transform: rotate(-135deg);
+
+  }
+
+}

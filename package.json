@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/leone2016/curso_sass#readme",
   "devDependencies": {
-    "node-sass": "^4.12.0"
+    "node-sass": "^7.0.0"
   },
   "dependencies": {
     "cordova": "^9.0.0"
